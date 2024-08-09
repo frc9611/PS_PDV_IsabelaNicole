@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Scouting - FRC</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    color: #ececec;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: hsl(0, 0%, 17%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+fieldset {
+    border: 1px solid hsl(0, 0%, 24%);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color:hsl(0, 0%, 24%);
+}
+
+legend {
+    font-weight: bold;
+    color: hsl(0, 0%, 100%);
+}
+
+label {
+    margin-top: 10px;
+    display: block;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: #004d99;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: hsl(0, 0%, 100%);
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registro de Scouting - FRC</h1>
+        <form action="#" method="post">
+            <fieldset>
+
+                <legend>Informações da Partida</legend> 
+                
+                <label for="match-date">Data:</label>
+                <input id="match-date" type="date" name="data">
+
+                    <label>Nome do evento</label><input id="Nome do Evento" type="text" name="Nome do evento"/>
+
+                    <label>Número da Partida:</label><input  id="match-number"type="number" name="Número da Partida">
+
+                    <label>Cor da Aliança</label> <input id="Cor da Aliança" type="text" name="Cor da Aliança"/>
+
+                    <label>Número da Equipe:</label> <input id="Número da Equipe" type="number" name="Número da Equipe">
+
+                    <label>Nome da Equipe:</label><input id="Nome da Equipe"type="text" name="Nome da Equipe">
+            </fieldset>
+
+            <fieldset>
+                <legend>Autônomo</legend>
+
+                <label>Pontuação:</label><input id="Pontuação"type="number" name="Pontuação" min="0">
+
+                <label">Tarefas completas:</label><input id="Tarefas Completas"type="number" name="Tarefas completas" min="0">
+
+                <label>Caminho:</label><textarea id="Caminho" name="caminho"></textarea>
+
+                <label>Comentários Adicionais:</label><textarea id="comments" name="comments"></textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>Teleoperado</legend>
+
+                <label>Pontuação:</label><input  id="Pontuação"type="number" name="Pontuação" min="0">
+                
+                <label>Agilidade:</label><input id="Agilidade"type="number" name="Agilidade" min="0">
+
+                <label>Condução:</label><input id="condução"type="number" name="condução" min="0">
+
+                <label>Defesa:</label><input id="defesa"type="number" name="defesa" min="0">
+            </fieldset>
+
+            <fieldset>
+                <legend>Fim de Jogo</legend>
+
+                <label>Ações Completadas:</label><input  id="Ações Completadas"type="number" name="Ações Completadas" min="0">
+
+                <label>Ações Não Completadas:</label><input id="Ações Não Completadas"type="number" name="Ações Não Completadas" min="0">
+
+                <label>Pontuação Final:</label><input id="Pontuação Final"type="number" name="Pontuação Final" min="0">
+
+                <label for="Feedback">Feedback:</label><textarea id="Feedback" name="Feedback"></textarea>
+            </fieldset>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>
