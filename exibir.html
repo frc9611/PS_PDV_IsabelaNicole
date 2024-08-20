@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados do Scouting - FRC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            color: #ececec;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: hsl(0, 0%, 17%);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td { 
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #000000;
+            color: #fff;
+            
+        }
+
+        tr:nth-child(even) {
+            background-color: #484848;
+        }
+
+        .tm-linha{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dados do Scouting - FRC</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <td>Data</td>
+                    <td colspan="5" id="data"></td>
+                </tr>
+                <tr>
+                    <td>Nome do Evento</td>
+                    <td colspan="5" id="event-name"></td>
+                </tr>
+                <tr>
+                    <td>Número da Partida</td>
+                    <td colspan="5" id="match-number"></td>
+                </tr>
+                <tr>
+                    <th>Categoria</th>
+                    <th colspan="5">Aliança Azul</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <tr>
+                    <td>Número Equipe</td>
+                    <td id="blue-team-number" class="tm-linha"></td>
+                    <td id="blue-team-number2"class="tm-linha"></td>
+                    <td id="blue-team-number3"class="tm-linha"></td>
+                </tr>
+                <tr>
+                    <td>Nome Equipe</td>
+                    <td id="blue-team-name"></td>
+                    <td id="blue-team-name2"></td>
+                    <td id="blue-team-name3"></td>
+                </tr>
+                <tr>
+                    <td>Autônomo - Pontuação</td>
+                    <td id="blue-auto-score"></td>
+                    <td id="blue-auto-score2"></td>
+                    <td id="blue-auto-score3"></td>
+                </tr>
+                <tr>
+                    <td>Autônomo - Tarefas Completas</td>
+                    <td id="blue-auto-tasks"></td>
+                    <td id="blue-auto-tasks2"></td>
+                    <td id="blue-auto-tasks3"></td>
+                </tr>
+                <tr>
+                    <td>Autônomo - Caminho</td>
+                    <td id="blue-auto-path"></td>
+                    <td id="blue-auto-path2"></td>
+                    <td id="blue-auto-path3"></td>
+                </tr>
+                <tr>
+                    <td>Autônomo - Comentários Adicionais</td>
+                    <td id="blue-auto-comments"></td>
+                    <td id="blue-auto-comments2"></td>
+                    <td id="blue-auto-comments3"></td>
+                </tr>
+                <tr>
+                    <td>Teleoperado - Pontuação</td>
+                    <td id="blue-teleop-score"></td>
+                    <td id="blue-teleop-score2"></td>
+                    <td id="blue-teleop-score3"></td>
+
+                </tr>
+                <tr>
+                    <td>Teleoperado - Agilidade</td>
+                    <td id="blue-teleop-agility"></td>
+                    <td id="blue-teleop-agility2"></td>
+
+                    <td id="blue-teleop-agility3"></td>
+
+                </tr>
+                <tr>
+                    <td>Teleoperado - Condução</td>
+                    <td id="blue-teleop-driving"></td>
+                    <td id="blue-teleop-driving2"></td>
+
+                    <td id="blue-teleop-driving3"></td>
+
+                </tr>
+                <tr>
+                    <td>Teleoperado - Defesa</td>
+                    <td id="blue-teleop-defense"></td>
+                    <td id="blue-teleop-defense2"></td>
+
+                    <td id="blue-teleop-defense3"></td>
+
+                </tr>
+                <tr>
+                    <td>Fim de Jogo - Ações Completadas</td>
+                    <td id="blue-endgame-actions-completed"></td>
+                    <td id="blue-endgame-actions-completed2"></td>
+
+                    <td id="blue-endgame-actions-completed3"></td>
+
+                </tr>
+                <tr>
+                    <td>Fim de Jogo - Ações Não Completadas</td>
+                    <td id="blue-endgame-actions-not-completed"></td>
+                    <td id="blue-endgame-actions-not-completed2"></td>
+
+                    <td id="blue-endgame-actions-not-completed3"></td>
+
+                </tr>
+
+                <tr>
+                    <td>Fim de Jogo - Feedback</td>
+                    <td id="blue-endgame-feedback"></td>
+                    <td id="blue-endgame-feedback2"></td>
+                    <td id="blue-endgame-feedback3"></td>
+                    <tr>
+                        <td>Fim de Jogo - Pontuação Final de Aliança</td>
+                        <td colspan="5" id="blue-endgame-score"></td>
+                    </tr>
+
+          
+                </tr>
+            </tbody>
+        </table>
+        <tr>
+        <table>
+            <th>Categoria</th>
+            <th colspan="5">Aliança Vermelha</th>
+            <tbody>
+                <tr>
+                <tr>
+                    <td>Número Equipe</td>
+                    <td id="red-team-number" class="tm-linha"></td>
+                    <td id="red-team-number2"class="tm-linha"></td>
+                    <td id="red-team-number3"class="tm-linha"></td>
+                </tr>
+                <tr>
+                    <td>Nome Equipe</td>
+                    <td id="red-team-name"></td>
+                    <td id="red-team-name2"></td>
+                    <td id="red-team-name3"></td>
+                </tr>
+                <tr>
+                    <td>Autônomo - Pontuação</td>
+                    <td id="red-auto-score"></td>
+                    <td id="red-auto-score2"></td>
+                    <td id="red-auto-score3"></td>
+                </tr>
+                <tr>
+                    <td>Autônomo - Tarefas Completas</td>
+                    <td id="red-auto-tasks"></td>
+                    <td id="red-auto-tasks2"></td>
+                    <td id="red-auto-tasks3"></td>
+                </tr>
+                <tr>
+                    <td>Autônomo - Caminho</td>
+                    <td id="red-auto-path"></td>
+                    <td id="red-auto-path2"></td>
+                    <td id="red-auto-path3"></td>
+                </tr>
+                <tr>
+                    <td>Autônomo - Comentários Adicionais</td>
+                    <td id="red-auto-comments"></td>
+                    <td id="red-auto-comments2"></td>
+                    <td id="red-auto-comments3"></td>
+                </tr>
+                <tr>
+                    <td>Teleoperado - Pontuação</td>
+                    <td id="red-teleop-score"></td>
+                    <td id="red-teleop-score2"></td>
+                    <td id="red-teleop-score3"></td>
+
+                </tr>
+                <tr>
+                    <td>Teleoperado - Agilidade</td>
+                    <td id="red-teleop-agility"></td>
+                    <td id="red-teleop-agility2"></td>
+                    <td id="red-teleop-agility3"></td>
+
+                </tr>
+                <tr>
+                    <td>Teleoperado - Condução</td>
+                    <td id="red-teleop-driving"></td>
+                    <td id="red-teleop-driving2"></td>
+                    <td id="red-teleop-driving3"></td>
+
+                </tr>
+                <tr>
+                    <td>Teleoperado - Defesa</td>
+                    <td id="red-teleop-defense"></td>
+                    <td id="red-teleop-defense2"></td>
+                    <td id="red-teleop-defense3"></td>
+
+                </tr>
+                <tr>
+                    <td>Fim de Jogo - Ações Completadas</td>
+                    <td id="red-endgame-actions-completed"></td>
+                    <td id="red-endgame-actions-completed2"></td>
+                    <td id="red-endgame-actions-completed3"></td>
+
+                </tr>
+                <tr>
+                    <td>Fim de Jogo - Ações Não Completadas</td>
+                    <td id="red-endgame-actions-not-completed"></td>
+                    <td id="red-endgame-actions-not-completed2"></td>
+                    <td id="red-endgame-actions-not-completed3"></td>
+
+                </tr>
+
+                <tr>
+                    <td>Fim de Jogo - Feedback</td>
+                    <td id="red-endgame-feedback"></td>
+                    <td id="red-endgame-feedback2"></td>
+                    <td id="red-endgame-feedback3"></td>
+                    <tr>
+                        <td>Fim de Jogo - Pontuação Final de Aliança</td>
+                        <td colspan="5" id="red-endgame-score"></td>
+                    </tr>
+          
+                </tr>
+            </tbody>
+    </table>
+    </div>
+
+    <script>
+        // Recupera os dados do local storage
+        const scoutingData = JSON.parse(localStorage.getItem('scoutingData'));
+
+        // Preenche os campos com os dados armazenados
+        document.getElementById('data').textContent = scoutingData.data || '';
+        document.getElementById('event-name').textContent = scoutingData['event-name'] || '';
+        document.getElementById('match-number').textContent = scoutingData['match-number'] || '';
+        document.getElementById('blue-team-number').textContent = scoutingData['blue-team-number'] || '';
+        document.getElementById('blue-team-number2').textContent = scoutingData['blue-team-number2'] || '';
+        document.getElementById('blue-team-number3').textContent = scoutingData['blue-team-number3'] || '';
+        document.getElementById('blue-team-name').textContent = scoutingData['blue-team-name'] || '';
+        document.getElementById('blue-team-name2').textContent = scoutingData['blue-team-name2'] || '';
+        document.getElementById('blue-team-name3').textContent = scoutingData['blue-team-name3'] || '';
+        document.getElementById('blue-auto-score').textContent = scoutingData['blue-auto-score'] || '';
+        document.getElementById('blue-auto-score2').textContent = scoutingData['blue-auto-score2'] || '';
+        document.getElementById('blue-auto-score3').textContent = scoutingData['blue-auto-score3'] || '';
+        document.getElementById('blue-auto-tasks').textContent = scoutingData['blue-auto-tasks'] || '';
+        document.getElementById('blue-auto-tasks2').textContent = scoutingData['blue-auto-tasks2'] || '';
+        document.getElementById('blue-auto-tasks3').textContent = scoutingData['blue-auto-tasks3'] || '';
+        document.getElementById('blue-auto-path').textContent = scoutingData['blue-auto-path'] || '';
+        document.getElementById('blue-auto-path2').textContent = scoutingData['blue-auto-path2'] || '';
+        document.getElementById('blue-auto-path3').textContent = scoutingData['blue-auto-path3'] || '';
+        document.getElementById('blue-auto-comments').textContent = scoutingData['blue-auto-comments'] || '';
+        document.getElementById('blue-auto-comments2').textContent = scoutingData['blue-auto-comments2'] || '';
+        document.getElementById('blue-auto-comments3').textContent = scoutingData['blue-auto-comments3'] || '';
+        document.getElementById('blue-teleop-score').textContent = scoutingData['blue-teleop-score'] || '';
+        document.getElementById('blue-teleop-score2').textContent = scoutingData['blue-teleop-score2'] || '';
+        document.getElementById('blue-teleop-score3').textContent = scoutingData['blue-teleop-score3'] || '';
+        document.getElementById('blue-teleop-agility').textContent = scoutingData['blue-teleop-agility'] || '';
+        document.getElementById('blue-teleop-agility2').textContent = scoutingData['blue-teleop-agility2'] || '';
+        document.getElementById('blue-teleop-agility3').textContent = scoutingData['blue-teleop-agility3'] || '';
+        document.getElementById('blue-teleop-driving').textContent = scoutingData['blue-teleop-driving'] || '';
+        document.getElementById('blue-teleop-driving2').textContent = scoutingData['blue-teleop-driving2'] || '';
+        document.getElementById('blue-teleop-driving3').textContent = scoutingData['blue-teleop-driving3'] || '';
+        document.getElementById('blue-teleop-defense').textContent = scoutingData['blue-teleop-defense'] || '';
+        document.getElementById('blue-teleop-defense2').textContent = scoutingData['blue-teleop-defense2'] || '';
+        document.getElementById('blue-teleop-defense3').textContent = scoutingData['blue-teleop-defense3'] || '';
+        document.getElementById('blue-endgame-actions-completed').textContent = scoutingData['blue-endgame-actions-completed'] || '';
+        document.getElementById('blue-endgame-actions-completed2').textContent = scoutingData['blue-endgame-actions-completed2'] || '';
+        document.getElementById('blue-endgame-actions-completed3').textContent = scoutingData['blue-endgame-actions-completed3'] || '';
+        document.getElementById('blue-endgame-actions-not-completed').textContent = scoutingData['blue-endgame-actions-not-completed'] || '';
+        document.getElementById('blue-endgame-actions-not-completed2').textContent = scoutingData['blue-endgame-actions-not-completed2'] || '';
+        document.getElementById('blue-endgame-actions-not-completed3').textContent = scoutingData['blue-endgame-actions-not-completed3'] || '';
+        document.getElementById('blue-endgame-score').textContent = scoutingData['blue-endgame-score'] || '';
+
+        document.getElementById('blue-endgame-feedback').textContent = scoutingData['blue-endgame-feedback'] || '';
+        document.getElementById('blue-endgame-feedback2').textContent = scoutingData['blue-endgame-feedback2'] || '';
+        document.getElementById('blue-endgame-feedback3').textContent = scoutingData['blue-endgame-feedback3'] || '';
+        document.getElementById('red-team-number').textContent = scoutingData['red-team-number'] || '';
+        document.getElementById('red-team-number2').textContent = scoutingData['red-team-number2'] || '';
+        document.getElementById('red-team-number3').textContent = scoutingData['red-team-number3'] || '';
+        document.getElementById('red-team-name').textContent = scoutingData['red-team-name'] || '';
+        document.getElementById('red-team-name2').textContent = scoutingData['red-team-name2'] || '';
+        document.getElementById('red-team-name3').textContent = scoutingData['red-team-name3'] || '';
+        document.getElementById('red-auto-score').textContent = scoutingData['red-auto-score'] || '';
+        document.getElementById('red-auto-score2').textContent = scoutingData['red-auto-score2'] || '';
+        document.getElementById('red-auto-score3').textContent = scoutingData['red-auto-score3'] || '';
+        document.getElementById('red-auto-tasks').textContent = scoutingData['red-auto-tasks'] || '';
+        document.getElementById('red-auto-tasks2').textContent = scoutingData['red-auto-tasks2'] || '';
+        document.getElementById('red-auto-tasks3').textContent = scoutingData['red-auto-tasks3'] || '';
+        document.getElementById('red-auto-path').textContent = scoutingData['red-auto-path'] || '';
+        document.getElementById('red-auto-path2').textContent = scoutingData['red-auto-path2'] || '';
+        document.getElementById('red-auto-path3').textContent = scoutingData['red-auto-path3'] || '';
+        document.getElementById('red-auto-comments').textContent = scoutingData['red-auto-comments'] || '';
+        document.getElementById('red-auto-comments2').textContent = scoutingData['red-auto-comments2'] || '';
+        document.getElementById('red-auto-comments3').textContent = scoutingData['red-auto-comments3'] || '';
+        document.getElementById('red-teleop-score').textContent = scoutingData['red-teleop-score'] || '';
+        document.getElementById('red-teleop-score2').textContent = scoutingData['red-teleop-score2'] || '';
+        document.getElementById('red-teleop-score3').textContent = scoutingData['red-teleop-score3'] || '';
+        document.getElementById('red-teleop-agility').textContent = scoutingData['red-teleop-agility'] || '';
+        document.getElementById('red-teleop-agility2').textContent = scoutingData['red-teleop-agility2'] || '';
+        document.getElementById('red-teleop-agility3').textContent = scoutingData['red-teleop-agility3'] || '';
+        document.getElementById('red-teleop-driving').textContent = scoutingData['red-teleop-driving'] || '';
+        document.getElementById('red-teleop-driving2').textContent = scoutingData['red-teleop-driving2'] || '';
+        document.getElementById('red-teleop-driving3').textContent = scoutingData['red-teleop-driving3'] || '';
+        document.getElementById('red-teleop-defense').textContent = scoutingData['red-teleop-defense'] || '';
+        document.getElementById('red-teleop-defense2').textContent = scoutingData['red-teleop-defense2'] || '';
+        document.getElementById('red-teleop-defense3').textContent = scoutingData['red-teleop-defense3'] || '';
+        document.getElementById('red-endgame-actions-completed').textContent = scoutingData['red-endgame-actions-completed'] || '';
+        document.getElementById('red-endgame-actions-completed2').textContent = scoutingData['red-endgame-actions-completed2'] || '';
+        document.getElementById('red-endgame-actions-completed3').textContent = scoutingData['red-endgame-actions-completed3'] || '';
+        document.getElementById('red-endgame-actions-not-completed').textContent = scoutingData['red-endgame-actions-not-completed'] || '';
+        document.getElementById('red-endgame-actions-not-completed2').textContent = scoutingData['red-endgame-actions-not-completed2'] || '';
+        document.getElementById('red-endgame-actions-not-completed3').textContent = scoutingData['red-endgame-actions-not-completed3'] || '';
+        document.getElementById('red-endgame-score').textContent = scoutingData['red-endgame-score'] || '';
+
+        document.getElementById('red-endgame-feedback').textContent = scoutingData['red-endgame-feedback'] || '';
+        document.getElementById('red-endgame-feedback2').textContent = scoutingData['red-endgame-feedback2'] || '';
+        document.getElementById('red-endgame-feedback3').textContent = scoutingData['red-endgame-feedback3'] || '';
+        
+    </script>
+</body>
+</html>

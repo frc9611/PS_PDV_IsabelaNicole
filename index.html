@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Scouting - FRC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;
+            color: #ececec;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: hsl(0, 0%, 17%);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        fieldset {
+            border: 1px solid hsl(0, 0%, 24%);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color:hsl(0, 0%, 24%);
+        }
+
+        legend {
+            font-weight: bold;
+            color: hsl(0, 0%, 100%);
+        }
+
+        label {
+            margin-top: 10px;
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        textarea,
+        input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            background-color: #004d99;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: hsl(0, 0%, 100%);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #004d99;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Registro de Scouting - FRC</h1>
+        <form id="scouting-form">
+            <fieldset>
+                <legend>Informações da Partida</legend> 
+                
+                <label for="match-date">Data:</label>
+                <input id="match-date" type="date" name="data">
+
+                <label>Nome do evento:</label>
+                <input id="event-name" type="text" name="event-name"/>
+
+                <label>Número da Partida:</label>
+                <input id="match-number" type="number" name="match-number">
+            </fieldset>
+
+            <fieldset>
+                <legend>Aliança Azul</legend>
+
+                <label>1.Número da Equipe:</label>
+                <input id="blue-team-number" type="number" name="blue-team-number">
+
+                <label>1.Nome da Equipe:</label>
+                <input id="blue-team-name" type="text" name="blue-team-name"/>
+
+                <fieldset>
+                    <legend>1.Autônomo</legend>
+                    <label>1.Pontuação:</label>
+                    <input id="blue-auto-score" type="number" name="blue-auto-score" min="0">
+
+                    <label>1.Tarefas completas:</label>
+                    <input id="blue-auto-tasks" type="number" name="blue-auto-tasks" min="0">
+
+                    <label>1.Caminho:</label>
+                    <textarea id="blue-auto-path" name="blue-auto-path"></textarea>
+
+                    <label>1.Comentários Adicionais:</label>
+                    <textarea id="blue-auto-comments" name="blue-auto-comments"></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <legend>1.Teleoperado</legend>
+                    <label>1.Pontuação:</label>
+                    <input id="blue-teleop-score" type="number" name="blue-teleop-score" min="0">
+                    
+                    <label>1.Agilidade:</label>
+                    <input id="blue-teleop-agility" type="number" name="blue-teleop-agility" min="0">
+
+                    <label>1.Condução:</label>
+                    <input id="blue-teleop-driving" type="number" name="blue-teleop-driving" min="0">
+
+                    <label>1.Defesa:</label>
+                    <input id="blue-teleop-defense" type="number" name="blue-teleop-defense" min="0">
+                </fieldset>
+
+                <fieldset>
+                    <legend>1.Fim de Jogo</legend>
+                    <label>1.Ações Completadas:</label>
+                    <input id="blue-endgame-actions-completed" type="number" name="blue-endgame-actions-completed" min="0">
+
+                    <label>1.Ações Não Completadas:</label>
+                    <input id="blue-endgame-actions-not-completed" type="number" name="blue-endgame-actions-not-completed" min="0">
+
+
+
+                    <label>1.Feedback:</label>
+                    <textarea id="blue-endgame-feedback" name="blue-endgame-feedback"></textarea>
+                </fieldset>
+            </fieldset>
+
+            <fieldset>
+            <label>2.Número da Equipe:</label>
+                <input id="blue-team-number2" type="number" name="blue-team-number2">
+
+                <label>2.Nome da Equipe:</label>
+                <input id="blue-team-name2" type="text" name="blue-team-name2"/>
+
+                <fieldset>
+                    <legend>2.Autônomo</legend>
+                    <label>2.Pontuação:</label>
+                    <input id="blue-auto-score2" type="number" name="blue-auto-score2" min="0">
+
+                    <label>2.Tarefas completas:</label>
+                    <input id="blue-auto-tasks2" type="number" name="blue-auto-tasks2" min="0">
+
+                    <label>2.Caminho:</label>
+                    <textarea id="blue-auto-path2" name="blue-auto-path2"></textarea>
+
+                    <label>2.Comentários Adicionais:</label>
+                    <textarea id="blue-auto-comments2" name="blue-auto-comments2"></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <legend>2.Teleoperado</legend>
+                    <label>2.Pontuação:</label>
+                    <input id="blue-teleop-score2" type="number" name="blue-teleop-score2" min="0">
+                    
+                    <label>2.Agilidade:</label>
+                    <input id="blue-teleop-agility2" type="number" name="blue-teleop-agility2" min="0">
+
+                    <label>2.Condução:</label>
+                    <input id="blue-teleop-driving2" type="number" name="blue-teleop-driving2" min="0">
+
+                    <label>2.Defesa:</label>
+                    <input id="blue-teleop-defense2" type="number" name="blue-teleop-defense2" min="0">
+                </fieldset>
+
+                <fieldset>
+                    <legend>2.Fim de Jogo</legend>
+                    <label>2.Ações Completadas:</label>
+                    <input id="blue-endgame-actions-completed2" type="number" name="blue-endgame-actions-completed2" min="0">
+
+                    <label>2.Ações Não Completadas:</label>
+                    <input id="blue-endgame-actions-not-completed2" type="number" name="blue-endgame-actions-not-completed2" min="0">
+
+
+
+                    <label>2.Feedback:</label>
+                    <textarea id="blue-endgame-feedback2" name="blue-endgame-feedback2"></textarea>
+                </fieldset>
+            </fieldset>
+
+            <fieldset>
+                <label>3.Número da Equipe:</label>
+                    <input id="blue-team-number3" type="number" name="blue-team-number3">
+    
+                    <label>3.Nome da Equipe:</label>
+                    <input id="blue-team-name3" type="text" name="blue-team-name3"/>
+    
+                    <fieldset>
+                        <legend>3.Autônomo</legend>
+                        <label>3.Pontuação:</label>
+                        <input id="blue-auto-score3" type="number" name="blue-auto-score3" min="0">
+    
+                        <label>3.Tarefas completas:</label>
+                        <input id="blue-auto-tasks3" type="number" name="blue-auto-tasks3" min="0">
+    
+                        <label>3.Caminho:</label>
+                        <textarea id="blue-auto-path3" name="blue-auto-path3"></textarea>
+    
+                        <label>3.Comentários Adicionais:</label>
+                        <textarea id="blue-auto-comments3" name="blue-auto-comments3"></textarea>
+                    </fieldset>
+    
+                    <fieldset>
+                        <legend>3.Teleoperado</legend>
+                        <label>3.Pontuação:</label>
+                        <input id="blue-teleop-score3" type="number" name="blue-teleop-score3" min="0">
+                        
+                        <label>3.Agilidade:</label>
+                        <input id="blue-teleop-agilit3" type="number" name="blue-teleop-agility3" min="0">
+    
+                        <label>3.Condução:</label>
+                        <input id="blue-teleop-driving3" type="number" name="blue-teleop-driving3" min="0">
+    
+                        <label>3.Defesa:</label>
+                        <input id="blue-teleop-defense3" type="number" name="blue-teleop-defense3" min="0">
+                    </fieldset>
+    
+                    <fieldset>
+                        <legend>3.Fim de Jogo</legend>
+                        <label>3.Ações Completadas:</label>
+                        <input id="blue-endgame-actions-completed3" type="number" name="blue-endgame-actions-completed3" min="0">
+    
+                        <label>3.Ações Não Completadas:</label>
+                        <input id="blue-endgame-actions-not-completed3" type="number" name="blue-endgame-actions-not-completed3" min="0">
+    
+                        <label>Pontuação Final:</label>
+                        <input id="blue-endgame-score" type="number" name="blue-endgame-score" min="0">
+    
+                        <label>3.Feedback:</label>
+                        <textarea id="blue-endgame-feedback3" name="blue-endgame-feedback3"></textarea>
+
+                        <label>Pontuação Final da Aliança:</label>
+                        <input id="blue-endgame-score" type="number" name="blue-endgame-score" min="0">
+                    </fieldset>
+                </fieldset>
+
+            <fieldset>
+                <legend>Aliança Vermelha</legend>
+
+                <label>1.Número da Equipe:</label>
+                <input id="red-team-number" type="number" name="red-team-number">
+
+                <label>1.Nome da Equipe:</label>
+                <input id="red-team-name" type="text" name="red-team-name"/>
+
+                <fieldset>
+                    <legend>1.Autônomo</legend>
+                    <label>1.Pontuação:</label>
+                    <input id="red-auto-score" type="number" name="red-auto-score" min="0">
+
+                    <label>1.Tarefas completas:</label>
+                    <input id="red-auto-tasks" type="number" name="red-auto-tasks" min="0">
+
+                    <label>1.Caminho:</label>
+                    <textarea id="red-auto-path" name="red-auto-path"></textarea>
+
+                    <label>1.Comentários Adicionais:</label>
+                    <textarea id="red-auto-comments" name="red-auto-comments"></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <legend>1.Teleoperado</legend>
+                    <label>1.Pontuação:</label>
+                    <input id="red-teleop-score" type="number" name="red-teleop-score" min="0">
+                    
+                    <label>1.Agilidade:</label>
+                    <input id="red-teleop-agility" type="number" name="red-teleop-agility" min="0">
+
+                    <label>1.Condução:</label>
+                    <input id="red-teleop-driving" type="number" name="red-teleop-driving" min="0">
+
+                    <label>1.Defesa:</label>
+                    <input id="red-teleop-defense" type="number" name="red-teleop-defense" min="0">
+                </fieldset>
+
+                <fieldset>
+                    <legend>1.Fim de Jogo</legend>
+                    <label>1.Ações Completadas:</label>
+                    <input id="red-endgame-actions-completed" type="number" name="red-endgame-actions-completed" min="0">
+
+                    <label>1.Ações Não Completadas:</label>
+                    <input id="red-endgame-actions-not-completed" type="number" name="red-endgame-actions-not-completed" min="0">
+
+
+                    <label>1.Feedback:</label>
+                    <textarea id="red-endgame-feedback" name="red-endgame-feedback"></textarea>
+                </fieldset>
+
+                <label>2.Número da Equipe:</label>
+                <input id="red-team-number2" type="number" name="red-team-number2">
+
+                <label>2.Nome da Equipe:</label>
+                <input id="red-team-name2" type="text" name="red-team-name2"/>
+
+                <fieldset>
+                    <legend>2.Autônomo</legend>
+                    <label>2.Pontuação:</label>
+                    <input id="red-auto-score2" type="number" name="red-auto-score2" min="0">
+
+                    <label>2.Tarefas completas:</label>
+                    <input id="red-auto-tasks2" type="number" name="red-auto-tasks2" min="0">
+
+                    <label>2.Caminho:</label>
+                    <textarea id="red-auto-path2" name="red-auto-path2"></textarea>
+
+                    <label>2.Comentários Adicionais:</label>
+                    <textarea id="red-auto-comments2" name="red-auto-comments2"></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <legend>2.Teleoperado</legend>
+                    <label>2.Pontuação:</label>
+                    <input id="red-teleop-score2" type="number" name="red-teleop-score2" min="0">
+                    
+                    <label>2.Agilidade:</label>
+                    <input id="red-teleop-agility2" type="number" name="red-teleop-agility2" min="0">
+
+                    <label>2.Condução:</label>
+                    <input id="red-teleop-driving2" type="number" name="red-teleop-driving2" min="0">
+
+                    <label>2.Defesa:</label>
+                    <input id="red-teleop-defense2" type="number" name="red-teleop-defense2" min="0">
+                </fieldset>
+
+                <fieldset>
+                    <legend>2.Fim de Jogo</legend>
+                    <label>2.Ações Completadas:</label>
+                    <input id="red-endgame-actions-completed2" type="number" name="red-endgame-actions-completed2" min="0">
+
+                    <label>2.Ações Não Completadas:</label>
+                    <input id="red-endgame-actions-not-completed2" type="number" name="red-endgame-actions-not-completed2" min="0">
+
+
+                    <label>2.Feedback:</label>
+                    <textarea id="red-endgame-feedback2" name="red-endgame-feedback2"></textarea>
+                </fieldset>
+
+                <label>3.Número da Equipe:</label>
+                <input id="red-team-number3" type="number" name="red-team-number3">
+
+                <label>3.Nome da Equipe:</label>
+                <input id="red-team-name3" type="text" name="red-team-name3"/>
+
+                <fieldset>
+                    <legend>3.Autônomo</legend>
+                    <label>3.Pontuação:</label>
+                    <input id="red-auto-score3" type="number" name="red-auto-score3" min="0">
+
+                    <label>3.Tarefas completas:</label>
+                    <input id="red-auto-tasks3" type="number" name="red-auto-tasks3" min="0">
+
+                    <label>3.Caminho:</label>
+                    <textarea id="red-auto-path3" name="red-auto-path3"></textarea>
+
+                    <label>3.Comentários Adicionais:</label>
+                    <textarea id="red-auto-comments3" name="red-auto-comments3"></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <legend>3.Teleoperado</legend>
+                    <label>3.Pontuação:</label>
+                    <input id="red-teleop-score3" type="number" name="red-teleop-score3" min="0">
+                    
+                    <label>3.Agilidade:</label>
+                    <input id="red-teleop-agility3" type="number" name="red-teleop-agility3" min="0">
+
+                    <label>3.Condução:</label>
+                    <input id="red-teleop-driving3" type="number" name="red-teleop-driving3" min="0">
+
+                    <label>3.Defesa:</label>
+                    <input id="red-teleop-defense3" type="number" name="red-teleop-defense3" min="0">
+                </fieldset>
+
+                <fieldset>
+                    <legend>3.Fim de Jogo</legend>
+                    <label>3.Ações Completadas:</label>
+                    <input id="red-endgame-actions-completed3" type="number" name="red-endgame-actions-completed3" min="0">
+
+                    <label>3.Ações Não Completadas:</label>
+                    <input id="red-endgame-actions-not-completed3" type="number" name="red-endgame-actions-not-completed3" min="0">
+
+
+                    <label>3.Feedback:</label>
+                    <textarea id="red-endgame-feedback3" name="red-endgame-feedback3"></textarea>
+
+                    <label>Pontuação Final da Aliança:</label>
+                    <input id="red-endgame-score" type="number" name="red-endgame-score" min="0">
+                </fieldset>
+
+            </fieldset>
+
+            <button type="button" onclick="saveData()">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        function saveData() {
+            const form = document.getElementById('scouting-form');
+            const formData = new FormData(form);
+            const formObject = {};
+
+            formData.forEach((value, key) => {
+                formObject[key] = value;
+            });
+
+            // Salva os dados no local storage
+            localStorage.setItem('scoutingData', JSON.stringify(formObject));
+
+            // Redireciona para a página de exibição de dados
+            window.location.href = 'exibir.html';
+        }
+    </script>
+</body>
+</html>
